@@ -11,31 +11,39 @@ is activated. More information can found at the links below:
 - [Virtualenv](https://virtualenv.pypa.io/en/latest/installation.html)
 
 # Setup
-Use the following instructions to setup the dev environment.  All instructions must be performed from your terminal:    return
+Use the following instructions to setup the dev environment.  All instructions must be performed from your terminal:
 
 ## 1. Install pip
-First, see if pip is already install. Open terminal and run    return
-`which pip`
-The location of pip should be displayed in the terminal, if not, download and install it:    return  
-`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-`python get-pip.py`
+First, see if pip is already install. Open terminal and run  
+
+    `which pip`  
+
+The location of pip should be displayed in the terminal, if not, download and install it:  
+
+    `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+    `python get-pip.py`
 
 ## 2. Install virtualenv
-confirm if virtualenv is already installed    return
-`which virtualenv`
-if not installed run the following  r  eturn
-`pip install virtualenv`
+confirm if virtualenv is already installed  
+
+    `which virtualenv`  
+
+if not installed run the following   
+
+    `pip install virtualenv`
 
 ## 3. Clone web automation repo
-Run the following    return
-`git clone https://github.com/otkinsey/web_automation`
+Run the following  
+
+    `git clone https://github.com/otkinsey/web_automation`
 
 ## 4. Create virtualenv
-Run the following    return
-`virtualenv projectenv --python=python3`
+Run the following  
+
+    `virtualenv projectenv --python=python3`
 
 ## 5. Install testing and web automation dpendencies
-`pip install -r requirements.txt`
+    `pip install -r requirements.txt`
 
 ## 6. Run automation test script
-`python test_automate_browser.py`
+    `python test_automate_browser.py`
