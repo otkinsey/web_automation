@@ -1,0 +1,5 @@
+*.zip
+*.tar*
+chromedriver
+geckodriver
+*env
