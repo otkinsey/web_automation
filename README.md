@@ -22,20 +22,20 @@ The location of pip should be displayed in the terminal, if not, download and in
 
 ## 2. Install virtualenv
 confirm if virtualenv is already installed
-    which virtualenv
+    `which virtualenv`
 if not installed run the following
-    pip install virtualenv
+    `pip install virtualenv`
 
 ## 3. Clone web automation repo
 Run the following
-    git clone https://github.com/otkinsey/web_automation
+    `git clone https://github.com/otkinsey/web_automation`
 
 ## 4. Create virtualenv
 Run the following
-    virtualenv projectenv --python=python3
+    `virtualenv projectenv --python=python3`
 
 ## 5. Install testing and web automation dpendencies
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ## 6. Run automation test script
-    python test_automate_browser.py
+`python test_automate_browser.py`
