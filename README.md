@@ -15,24 +15,24 @@ Use the following instructions to setup the dev environment.  All instructions m
 
 ## 1. Install pip
 First, see if pip is already install. Open terminal and run
-    which pip
+`which pip`
 The location of pip should be displayed in the terminal, if not, download and install it:
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-    python get-pip.py
+`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+`python get-pip.py`
 
 ## 2. Install virtualenv
 confirm if virtualenv is already installed
-    `which virtualenv`
+`which virtualenv`
 if not installed run the following
-    `pip install virtualenv`
+`pip install virtualenv`
 
 ## 3. Clone web automation repo
 Run the following
-    `git clone https://github.com/otkinsey/web_automation`
+`git clone https://github.com/otkinsey/web_automation`
 
 ## 4. Create virtualenv
 Run the following
-    `virtualenv projectenv --python=python3`
+`virtualenv projectenv --python=python3`
 
 ## 5. Install testing and web automation dpendencies
 `pip install -r requirements.txt`
