@@ -11,27 +11,27 @@ is activated. More information can found at the links below:
 - [Virtualenv](https://virtualenv.pypa.io/en/latest/installation.html)
 
 # Setup
-Use the following instructions to setup the dev environment.  All instructions must be performed from your terminal:
+Use the following instructions to setup the dev environment.  All instructions must be performed from your terminal:  return
 
 ## 1. Install pip
-First, see if pip is already install. Open terminal and run
+First, see if pip is already install. Open terminal and run  return  return
 `which pip`
-The location of pip should be displayed in the terminal, if not, download and install it:
+The location of pip should be displayed in the terminal, if not, download and install it:  return  
 `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 `python get-pip.py`
 
 ## 2. Install virtualenv
-confirm if virtualenv is already installed
+confirm if virtualenv is already installed  return
 `which virtualenv`
-if not installed run the following
+if not installed run the following  return
 `pip install virtualenv`
 
 ## 3. Clone web automation repo
-Run the following
+Run the following  return
 `git clone https://github.com/otkinsey/web_automation`
 
 ## 4. Create virtualenv
-Run the following
+Run the following  return
 `virtualenv projectenv --python=python3`
 
 ## 5. Install testing and web automation dpendencies
