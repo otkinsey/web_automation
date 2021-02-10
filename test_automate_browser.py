@@ -13,10 +13,11 @@ class AutomateBrowser(unittest.TestCase):
 
     def test_search_target(self):
         self.driver.get("https://www.duo.com")
-        assert "We're Duo." in self.driver.page_source
+        assert "Welp Duo." in self.driver.page_source
 
     def tear_down(self):
         self.driver.close() 
 
 if __name__ == "__main__":
     unittest.main()
+    
