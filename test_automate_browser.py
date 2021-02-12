@@ -16,6 +16,8 @@ class AutomateBrowser(unittest.TestCase):
         assert "We're Duo." in self.driver.page_source
         self.driver.get("product")
         self.driver.find_element_by_css_selector("driver.find_element_by_css_selector(.main-nav__link-icon icon-svg icon-svg--xs icon-chevron-thick-down")
+
+        #okoa's code
         
         
 
