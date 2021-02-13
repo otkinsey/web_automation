@@ -14,19 +14,14 @@ class AutomateBrowser(unittest.TestCase):
     def test_search_target(self):
         self.driver.get("https://www.duo.com")
         assert "We're Duo." in self.driver.page_source
-        self.driver.get("product")
-        self.driver.find_element_by_css_selector("driver.find_element_by_css_selector(.main-nav__link-icon icon-svg icon-svg--xs icon-chevron-thick-down")
-
-        #okoa's code
-        
-        
 
     def tear_down(self):
         self.driver.close() 
 
-    
-
-
 if __name__ == "__main__":
-    unittest.main()
-    
+    import __main__ 
+    suite = unittest.TestLoader().loadTestsFromModule(__main__)
+    with io.StringIO() as buf:
+        with contextlib.redirect.stdout(buf):
+            unittest.TextTextRunner(stream=buf).run(suite)
+        print("*** CAPTURED TEXT ***:\n%s" % buf.getvalue())
