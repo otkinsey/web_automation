@@ -30,14 +30,22 @@ class AutomateBrowser(unittest.TestCase):
 
         Username = "MshaKa"
         UserForm = self.driver.find_element_by_xpath("//*[@id='email-thinkmeliusUsername']") 
-        UserForm.send_keys(Username)
+        UserForm.send_keys(Username)   
+
+        Password = "Lockdown0&"
+        Passbox = self.driver.find_element_by_xpath("//*[@id='password']") 
+        Passbox.send_keys(Password)
+
+        
+
+
 
         #Username = MshaKa
         #UserForm = self.driver.find_element_by_xpath(//*[@id="email-thinkmeliusUsername"]) 
         #UserForm.send_keys(Username)
         
-        #signin = self.driver.find_element_by_xpath( //*[@id="root"]/div[3]/main/div/form/button/span[1]) 
-        #signin.click()
+        signin = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div/form/button/span[1]") 
+        signin.click()
 
         # *** keep this in the code for reference
         # ActionChains(self.driver).move_to_element(product).click() *** keep this in the code for reference
@@ -72,3 +80,5 @@ if __name__ == "__main__":
     #         unittest.TextTestRunner(stream=buf).run(suite)
     #     print("*** CAPTURED TEXT ***:\n%s" % buf.getvalue())
     # ******
+
+    # 4098020
