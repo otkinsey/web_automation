@@ -10,25 +10,34 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-BASE_URL = "https://www.duo.com"
+BASE_URL = "https://orakle.io/login"
 
 class AutomateBrowser(unittest.TestCase):
     def setUp(self):
         self.chrome_options = Options()
-        self.chrome_options.add_argument("--headless")
-        self.chrome_options.add_argument("detach")
+        # self.chrome_options.add_argument("--headless")
+        self.chrome_options.add_experimental_option("detach",True)
         self.chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
         self.driver = webdriver.Chrome(executable_path=os.path.abspath("chromedriver"), options=self.chrome_options)
 
     def test_search_target(self):
         
         self.driver.get(BASE_URL)
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(1)
         handle1 = self.driver.title
         print(f"window 1 handle: {handle1}")
-        assert "We're Duo." in self.driver.page_source 
+        #assert "We're Duo." in self.driver.page_source 
 
-        product = self.driver.find_element_by_xpath('//a[@href="/product"]') 
+        Username = "MshaKa"
+        UserForm = self.driver.find_element_by_xpath("//*[@id='email-thinkmeliusUsername']") 
+        UserForm.send_keys(Username)
+
+        #Username = MshaKa
+        #UserForm = self.driver.find_element_by_xpath(//*[@id="email-thinkmeliusUsername"]) 
+        #UserForm.send_keys(Username)
+        
+        #signin = self.driver.find_element_by_xpath( //*[@id="root"]/div[3]/main/div/form/button/span[1]) 
+        #signin.click()
 
         # *** keep this in the code for reference
         # ActionChains(self.driver).move_to_element(product).click() *** keep this in the code for reference
@@ -36,21 +45,21 @@ class AutomateBrowser(unittest.TestCase):
         # time.sleep(3) 
         # ******
 
-        self.driver.get(BASE_URL+'/product')
-        for handle in self.driver.window_handles:
-            self.driver.switch_to.window(handle)
-        handle2 = self.driver.window_handles
-        print(f"test_automate_browser.py - window 2 handle: {self.driver.title}")
-        page_heading = self.driver.find_element_by_css_selector(".header-basic__content.content h1")
+        #self.driver.get(BASE_URL+'/product')
+        #for handle in self.driver.window_handles:
+            #self.driver.switch_to.window(handle)
+        #handle2 = self.driver.window_handles
+        #print(f"test_automate_browser.py - window 2 handle: {self.driver.title}")
+        #page_heading = self.driver.find_element_by_css_selector(".header-basic__content.content h1")
 
         
         # WebDriverWait(self.driver, 10).until(lambda x:x.find_element_by_css_selector(".header-basic__content.content"))
 
-        assert "Access Security" in page_heading.text
+        #assert "Access Security" in page_heading.text
         
 
-    def tear_down(self):
-        self.driver.close() 
+    #def tear_down(self):
+        # self.driver.close() 
 
 if __name__ == "__main__":
     unittest.main()
