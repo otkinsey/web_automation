@@ -10,20 +10,20 @@ is activated. More information can found at the links below:
 - [Pip](https://pip.pypa.io/en/stable/)
 - [Virtualenv](https://virtualenv.pypa.io/en/latest/installation.html)
 
-# Setup
+# Setupgit
 Use the following instructions to setup the dev environment.  All instructions must be performed from your terminal:
 
 ## 1. Install pip
 First, see if pip is already install. Open terminal and run  
 
-    `which pip`  
+    `which pip`  python
 
 The location of pip should be displayed in the terminal, if not, download and install it:  
 
     `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
     `python get-pip.py`
 
-## 2. Install virtualenv
+## 2. Install virtualenvwhich
 confirm if virtualenv is already installed  
 
     `which virtualenv`  
