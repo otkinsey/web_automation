@@ -25,7 +25,7 @@ class AutomateBrowser(unittest.TestCase):
         self.driver.get(BASE_URL)
         self.driver.implicitly_wait(1)
         handle1 = self.driver.title
-        print(f"window 1 handle: {handle1}")
+        # print("window 1 handle: {handle1}")
         #assert "We're Duo." in self.driver.page_source 
 
         Username = "MshaKa"
