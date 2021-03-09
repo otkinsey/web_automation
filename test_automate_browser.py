@@ -39,13 +39,23 @@ class AutomateBrowser(unittest.TestCase):
         
 
 
-
         #Username = MshaKa
         #UserForm = self.driver.find_element_by_xpath(//*[@id="email-thinkmeliusUsername"]) 
         #UserForm.send_keys(Username)
         
         signin = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div/form/button/span[1]") 
         signin.click()
+
+        US30Scanner = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[2]/div[1]/div[2]/div/div[2]/a/button/span[1]/h6") 
+        US30Scanner.click()
+
+        Agreement = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/label/span[1]/span[1]/input") 
+        Agreement.click()
+
+        Ok = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/button/span[1]") 
+        Ok.click()
+
+    
 
         # *** keep this in the code for reference
         # ActionChains(self.driver).move_to_element(product).click() *** keep this in the code for reference
