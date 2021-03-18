@@ -23,7 +23,7 @@ class AutomateBrowser(unittest.TestCase):
     def test_search_target(self):
         
         self.driver.get(BASE_URL)
-        self.driver.implicitly_wait(1)
+        self.driver.implicitly_wait(1) 
         handle1 = self.driver.title
         # print("window 1 handle: {handle1}")
         #assert "We're Duo." in self.driver.page_source 
@@ -34,9 +34,9 @@ class AutomateBrowser(unittest.TestCase):
 
         Password = "Lockdown0&"
         Passbox = self.driver.find_element_by_xpath("//*[@id='password']") 
-        Passbox.send_keys(Password)
+        Passbox.send_keys(Password) 
 
-        
+      
 
 
         #Username = MshaKa
@@ -54,6 +54,30 @@ class AutomateBrowser(unittest.TestCase):
 
         Ok = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/button/span[1]") 
         Ok.click()
+
+        # return_keys(EntryPrice)
+
+        Archive = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[2]/div/div/div/button[2]/span[1]/span/span") 
+        Archive.click()
+
+        self.driver.implicitly_wait(5)
+
+        Symbol = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[3]/ul/div/div/div[1]/div[2]/div[1]/h6") 
+        print('[TAB-test_search_target] Symbol: ',Symbol.text)
+
+
+        EntryPrice = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[3]/ul/div/div/div[1]/div[2]/div[1]/div/div[1]/p") 
+        print('[TAB-test_search_target] Entry Price: ',EntryPrice.text)
+
+        TargetPrice = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[3]/ul/div/div/div[1]/div[2]/div[2]/div[1]/p[1]") 
+        print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
+
+
+
+
+
+
+
 
     
 
