@@ -35,18 +35,15 @@ class AutomateBrowser(unittest.TestCase):
         Password = "Lockdown0&"
         Passbox = self.driver.find_element_by_xpath("//*[@id='password']") 
         Passbox.send_keys(Password) 
-
-      
-
-
-        #Username = MshaKa
-        #UserForm = self.driver.find_element_by_xpath(//*[@id="email-thinkmeliusUsername"]) 
-        #UserForm.send_keys(Username)
         
         signin = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div/form/button/span[1]") 
         signin.click()
 
-        US30Scanner = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[2]/div[1]/div[2]/div/div[2]/a/button/span[1]/h6") 
+        # US30Scanner = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[2]/div[1]/div[2]/div/div[2]/a/button/span[1]/h6") 
+        # alternate definition of US30Scanner using class name jss640 jss712 jss714 jss717 jss738 jss848
+        self.driver.implicitly_wait(2)
+        US30Scanner = self.driver.find_elements_by_css_selector('.jss640.jss712.jss714.jss717.jss738.jss848')[1]
+        print('[test_automate_browser] buttons: ', US30Scanner)
         US30Scanner.click()
 
         Agreement = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/label/span[1]/span[1]/input") 
