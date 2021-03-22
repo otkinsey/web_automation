@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+import subprocess
 
 BASE_URL = "https://orakle.io/login"
 
@@ -70,7 +71,8 @@ class AutomateBrowser(unittest.TestCase):
         print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
 
 
-
+        subprocess.run(['open','/Applications/XM MT4.app'])
+    
 
 
 
