@@ -10,6 +10,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import subprocess
+import pdb
 
 BASE_URL = "https://orakle.io/login"
 
@@ -33,7 +34,7 @@ class AutomateBrowser(unittest.TestCase):
         UserForm = self.driver.find_element_by_xpath("//*[@id='email-thinkmeliusUsername']") 
         UserForm.send_keys(Username)   
 
-        Password = "Lockdown0&"
+        Password = "Kappaphi@1"
         Passbox = self.driver.find_element_by_xpath("//*[@id='password']") 
         Passbox.send_keys(Password) 
         
@@ -71,7 +72,59 @@ class AutomateBrowser(unittest.TestCase):
         print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
 
 
-        subprocess.run(['open','/Applications/XM MT4.app'])
+        # subprocess.run(['open','/Applications/XM MT4.app'])
+
+
+    # def init(self):
+
+        # print('logging into Stack overflow')
+        # self.driver=webdriver.Chrome('C:/Users/muathkinsey/AppData/Local/chromedriver_win32/chromedriver.exe')
+        self.driver.get('https://www.tradingview.com')
+         
+        self.driver.implicitly_wait(5)
+
+        signin = self.driver.find_element_by_xpath( "/html/body/div[2]/div[3]/div/div[4]/span[2]") 
+        signin.click()
+
+        email = self.driver.find_element_by_xpath( "//*[@id='overlap-manager-root']/div/div[2]/div/div/div/div/div/div/div[1]/div[4]/div/span/span") 
+        email.click()
+
+        Username = "muathkinsey"
+        UserForm = self.driver.find_element_by_name('username')
+        UserForm.send_keys(Username)   
+
+        Password = "muath12345678"
+        Passbox = self.driver.find_element_by_name("password")
+        Passbox.send_keys(Password) 
+
+        submit = self.driver.find_element_by_class_name( "tv-button__loader") 
+        submit.click()
+
+        # self.driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click() 
+        # self.driver.find_element_by_xpath('//input[@type="email"]').send_keys(username)
+        # self.driver.find_element_by_xpath('//*[@id="identifierNext"]').click()
+        # sleep(3)
+        # self.driver.find_element_by_xpath('//input[@type="password"]').send_keys(password)
+        # self.driver.find_element_by_xpath('//*[@id="passwordNext"]').click()
+        # sleep(2)
+        # self.driver.get("https://www.tradingview.com/")
+        # self.driver.implicitly_wait(1)
+
+        # passw=open('New Text Document (2).txt',"r",encoding="utf-8")   
+        # password=str(passw.read()) 
+        # user=open('New Text Document (3).txt',"r",encoding="utf-8")   
+        # username=str(user.read())
+        # mylike= Google(username,password)
+
+        # login = self.driver.find_element_by_xpath( "/html/body/div[2]/div[3]/div/div[4]/span[2]/a") 
+        # login.click()
+
+        # Google = self.driver.find_element_by_xpath( "//*[@id='overlap-manager-root']/div/div[2]/div/div/div/div/div/div/div[1]/div[1]/span[1]") 
+        # Google.click()
+
+        # Username = "muath.kinsey@gmail.com"
+        # UserForm = self.driver.find_elements_by_css_selector('#identifierId')
+        # UserForm.send_keys(Username)
     
 
 
