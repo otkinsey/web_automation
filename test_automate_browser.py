@@ -11,6 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 import subprocess
 import pdb
+from DWX_ZeroMQ_Connector_v2_0_1_RC8 import DWX_ZeroMQ_Connector
 
 BASE_URL = "https://orakle.io/login"
 
@@ -18,8 +19,8 @@ class AutomateBrowser(unittest.TestCase):
     def setUp(self):
         self.chrome_options = Options()
         # self.chrome_options.add_argument("--headless")
-        self.chrome_options.add_experimental_option("detach",True)
-        self.chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+        self.chrome_options.add_experimental_option("detach",True) 
+        self.chrome_options.binary_location = "C:\Users\otkin\dwx_connector\dwx-zeromq-connector\v2.0.1\python\api"
         self.driver = webdriver.Chrome(executable_path=os.path.abspath("chromedriver"), options=self.chrome_options)
 
     def test_search_target(self):
@@ -70,13 +71,18 @@ class AutomateBrowser(unittest.TestCase):
         # Symbol = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[2]/div[3]/div/div/div[2]/div[3]/ul/div/div[3]/div[2]/div[1]/div/div[1]") 
         Symbol = self.driver.find_element_by_css_selector(".jss566.jss584") 
         print('[TAB-test_search_target] Symbol: ',Symbol.text)
+<<<<<<< Updated upstream
 
         EntryPrice = self.driver.find_element_by_css_selector(".jss606.jss810.jss813.jss818.jss819 p.jss566.jss574") 
         print('[TAB-test_search_target] Entry Price: ',EntryPrice.text); pdb.set_trace()
+=======
+        
+>>>>>>> Stashed changes
 
         TargetPrice = self.driver.find_element_by_css_selector(".jss566.jss574.jss599")
         print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
 
+        # you need to find action (BUY or SELL)
 
         # subprocess.run(['open','/Applications/XM MT4.app'])
 
@@ -132,6 +138,7 @@ class AutomateBrowser(unittest.TestCase):
         # connect.click()
         
 
+        _zmq = DWX_ZeroMQ_Connector
         # self.driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click() 
         # self.driver.find_element_by_xpath('//input[@type="email"]').send_keys(username)
         # self.driver.find_element_by_xpath('//*[@id="identifierNext"]').click()
