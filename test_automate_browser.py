@@ -44,7 +44,7 @@ class AutomateBrowser(unittest.TestCase):
         # US30Scanner = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[2]/div[1]/div[2]/div/div[2]/a/button/span[1]/h6") 
         # alternate definition of US30Scanner using class name jss640 jss712 jss714 jss717 jss738 jss848
         self.driver.implicitly_wait(2)
-        US30Scanner = self.driver.find_elements_by_css_selector('.jss640.jss712.jss714.jss717.jss738.jss848')[1]
+        US30Scanner = self.driver.find_element_by_css_selector('#root > div.jss778 > main > div > div:nth-child(2) > div:nth-child(2) > div > div.jss637.jss771 > a > button')
         print('[test_automate_browser] buttons: ', US30Scanner)
         US30Scanner.click()
 
@@ -53,13 +53,17 @@ class AutomateBrowser(unittest.TestCase):
 
         Ok = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/button/span[1]") 
         Ok.click()
+        self.driver.implicitly_wait(3)
 
         # return_keys(EntryPrice)
 
-        Archive = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[2]/div/div/div/button[2]/span[1]/span/span") 
+        # Arrow = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[4]/div[2]/svg").click()
+        Arrow = self.driver.find_element_by_css_selector(".jss783.jss1017").click()
+
+        Archive = self.driver.find_element_by_css_selector( ".jss606.jss900.jss902.jss905.jss1373 .jss910") 
         Archive.click()
 
-        self.driver.implicitly_wait(5)
+        self.driver.implicitly_wait(3)
 
         Symbol = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[3]/ul/div/div/div[1]/div[2]/div[1]/h6") 
         print('[TAB-test_search_target] Symbol: ',Symbol.text)
@@ -99,6 +103,32 @@ class AutomateBrowser(unittest.TestCase):
 
         submit = self.driver.find_element_by_class_name( "tv-button__loader") 
         submit.click()
+        self.driver.implicitly_wait(10)
+
+
+        # searchtarget = "US30"
+        # search = self.driver.find_element_by_xpath('/html/body/div[3]/div[3]/div/div[3]/form/label/tv-autocomplete/input')
+        # search.send_keys(searchtarget)   
+        # # search.send_keys(keys.RETURN)   
+        # self.driver.implicitly_wait(3)
+
+        self.driver.get('https://www.tradingview.com/chart/7kHCdkJL/')
+        self.driver.implicitly_wait(3)
+
+        # fullchart = self.driver.find_element_by_xpath( "//*[@id='js-category-content']/div/div/div/div/div[1]/div/div[1]/div/a/span[2]") 
+        # fullchart.click()
+        # self.driver.implicitly_wait(5)
+
+
+
+        
+
+        
+        
+
+        # connect = self.driver.find_element_by_class_name( "button-1iktpaT1 size-l-2NEs9_xt intent-primary-1-IOYcbg appearance-default-dMjF_2Hu full-width-1wU8ljjC broker-login-submit-button button-1fGT2JpL") 
+        # connect.click()
+        
 
         # self.driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click() 
         # self.driver.find_element_by_xpath('//input[@type="email"]').send_keys(username)
