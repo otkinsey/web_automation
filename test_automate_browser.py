@@ -72,9 +72,13 @@ class AutomateBrowser(unittest.TestCase):
         Symbol = self.driver.find_element_by_css_selector(".jss566.jss584") 
         print('[TAB-test_search_target] Symbol: ',Symbol.text)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         EntryPrice = self.driver.find_element_by_css_selector(".jss606.jss810.jss813.jss818.jss819 p.jss566.jss574") 
         print('[TAB-test_search_target] Entry Price: ',EntryPrice.text); pdb.set_trace()
+=======
+        
+>>>>>>> Stashed changes
 =======
         
 >>>>>>> Stashed changes
