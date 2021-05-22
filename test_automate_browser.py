@@ -26,6 +26,7 @@ class AutomateBrowser(unittest.TestCase):
         
         self.driver.get(BASE_URL)
         self.driver.implicitly_wait(1) 
+        self.driver.maximize_window()
         handle1 = self.driver.title
         # print("window 1 handle: {handle1}")
         #assert "We're Duo." in self.driver.page_source 
@@ -45,34 +46,35 @@ class AutomateBrowser(unittest.TestCase):
         # alternate definition of US30Scanner using class name jss640 jss712 jss714 jss717 jss738 jss848
         self.driver.implicitly_wait(2)
         US30Scanner = self.driver.find_element_by_css_selector('#root > div.jss778 > main > div > div:nth-child(2) > div:nth-child(2) > div > div.jss637.jss771 > a > button')
-        print('[test_automate_browser] buttons: ', US30Scanner)
+        # print('[test_automate_browser] buttons: ', US30Scanner)
         US30Scanner.click()
 
-        Agreement = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/label/span[1]/span[1]/input") 
+        # Agreement = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/label/span[1]/span[1]/input") 
+        self.driver.implicitly_wait(3)
+        Agreement = self.driver.find_element_by_css_selector(".jss1024.jss1007 input[value='agreement']") 
         Agreement.click()
 
         Ok = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/button/span[1]") 
         Ok.click()
-        self.driver.implicitly_wait(3)
+        self.driver.implicitly_wait(5)
 
         # return_keys(EntryPrice)
 
         # Arrow = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[4]/div[2]/svg").click()
         Arrow = self.driver.find_element_by_css_selector(".jss783.jss1017").click()
 
-        Archive = self.driver.find_element_by_css_selector( ".jss606.jss900.jss902.jss905.jss1373 .jss910") 
+        Archive = self.driver.find_element_by_css_selector(".jss894.jss895 button:nth-child(2)") 
         Archive.click()
+        self.driver.implicitly_wait(17)
 
-        self.driver.implicitly_wait(3)
-
-        Symbol = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[3]/ul/div/div/div[1]/div[2]/div[1]/h6") 
+        # Symbol = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[2]/div[3]/div/div/div[2]/div[3]/ul/div/div[3]/div[2]/div[1]/div/div[1]") 
+        Symbol = self.driver.find_element_by_css_selector(".jss566.jss584") 
         print('[TAB-test_search_target] Symbol: ',Symbol.text)
 
+        EntryPrice = self.driver.find_element_by_css_selector(".jss606.jss810.jss813.jss818.jss819 p.jss566.jss574") 
+        print('[TAB-test_search_target] Entry Price: ',EntryPrice.text); pdb.set_trace()
 
-        EntryPrice = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[3]/ul/div/div/div[1]/div[2]/div[1]/div/div[1]/p") 
-        print('[TAB-test_search_target] Entry Price: ',EntryPrice.text)
-
-        TargetPrice = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[3]/div[3]/div/div/div[2]/div[3]/ul/div/div/div[1]/div[2]/div[2]/div[1]/p[1]") 
+        TargetPrice = self.driver.find_element_by_css_selector(".jss566.jss574.jss599")
         print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
 
 
@@ -83,27 +85,27 @@ class AutomateBrowser(unittest.TestCase):
 
         # print('logging into Stack overflow')
         # self.driver=webdriver.Chrome('C:/Users/muathkinsey/AppData/Local/chromedriver_win32/chromedriver.exe')
-        self.driver.get('https://www.tradingview.com')
+        # self.driver.get('https://www.tradingview.com')
          
-        self.driver.implicitly_wait(5)
+        # self.driver.implicitly_wait(5)
 
-        signin = self.driver.find_element_by_xpath( "/html/body/div[2]/div[3]/div/div[4]/span[2]") 
-        signin.click()
+        # signin = self.driver.find_element_by_xpath( "/html/body/div[2]/div[3]/div/div[4]/span[2]") 
+        # signin.click()
 
-        email = self.driver.find_element_by_xpath( "//*[@id='overlap-manager-root']/div/div[2]/div/div/div/div/div/div/div[1]/div[4]/div/span/span") 
-        email.click()
+        # email = self.driver.find_element_by_xpath( "//*[@id='overlap-manager-root']/div/div[2]/div/div/div/div/div/div/div[1]/div[4]/div/span/span") 
+        # email.click()
 
-        Username = "muathkinsey"
-        UserForm = self.driver.find_element_by_name('username')
-        UserForm.send_keys(Username)   
+        # Username = "muathkinsey"
+        # UserForm = self.driver.find_element_by_name('username')
+        # UserForm.send_keys(Username)   
 
-        Password = "muath12345678"
-        Passbox = self.driver.find_element_by_name("password")
-        Passbox.send_keys(Password) 
+        # Password = "muath12345678"
+        # Passbox = self.driver.find_element_by_name("password")
+        # Passbox.send_keys(Password) 
 
-        submit = self.driver.find_element_by_class_name( "tv-button__loader") 
-        submit.click()
-        self.driver.implicitly_wait(10)
+        # submit = self.driver.find_element_by_class_name( "tv-button__loader") 
+        # submit.click()
+        # self.driver.implicitly_wait(10)
 
 
         # searchtarget = "US30"
@@ -112,8 +114,8 @@ class AutomateBrowser(unittest.TestCase):
         # # search.send_keys(keys.RETURN)   
         # self.driver.implicitly_wait(3)
 
-        self.driver.get('https://www.tradingview.com/chart/7kHCdkJL/')
-        self.driver.implicitly_wait(3)
+        # self.driver.get('https://www.tradingview.com/chart/7kHCdkJL/')
+        # self.driver.implicitly_wait(3)
 
         # fullchart = self.driver.find_element_by_xpath( "//*[@id='js-category-content']/div/div/div/div/div[1]/div/div[1]/div/a/span[2]") 
         # fullchart.click()
