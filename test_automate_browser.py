@@ -11,8 +11,11 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 import subprocess
 import pdb
+import sys
 from DWX_ZeroMQ_Connector_v2_0_1_RC8 import DWX_ZeroMQ_Connector
 
+# add path to DWX_ZeroMQ_Connector_v2_0_1_RC8 python execution path
+sys.path.append("C:\\Users\\otkin\\dwx_connector\\dwx-zeromq-connector\\v2.0.1\\python\\api")
 BASE_URL = "https://orakle.io/login"
 
 class AutomateBrowser(unittest.TestCase):
@@ -71,17 +74,9 @@ class AutomateBrowser(unittest.TestCase):
         # Symbol = self.driver.find_element_by_xpath("//*[@id='root']/div[3]/main/div[2]/div[3]/div/div/div[2]/div[3]/ul/div/div[3]/div[2]/div[1]/div/div[1]") 
         Symbol = self.driver.find_element_by_css_selector(".jss566.jss584") 
         print('[TAB-test_search_target] Symbol: ',Symbol.text)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
         EntryPrice = self.driver.find_element_by_css_selector(".jss606.jss810.jss813.jss818.jss819 p.jss566.jss574") 
         print('[TAB-test_search_target] Entry Price: ',EntryPrice.text); pdb.set_trace()
-=======
-        
->>>>>>> Stashed changes
-=======
-        
->>>>>>> Stashed changes
 
         TargetPrice = self.driver.find_element_by_css_selector(".jss566.jss574.jss599")
         print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
