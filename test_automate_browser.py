@@ -29,7 +29,7 @@ class AutomateBrowser(unittest.TestCase):
 
     def test_search_target(self):
         
-        self.driver.get(https://orakle.io/tools/us30)
+        self.driver.get(BASE_URL)
         self.driver.implicitly_wait(1) 
         self.driver.maximize_window()
         handle1 = self.driver.title
@@ -49,10 +49,12 @@ class AutomateBrowser(unittest.TestCase):
 
         # US30Scanner = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[2]/div[1]/div[2]/div/div[2]/a/button/span[1]/h6") 
         # alternate definition of US30Scanner using class name jss640 jss712 jss714 jss717 jss738 jss848
-        self.driver.implicitly_wait(2)
+        # self.driver.implicitly_wait(2)
         US30Scanner = self.driver.find_element_by_css_selector('#root > div.jss778 > main > div > div:nth-child(2) > div:nth-child(2) > div > div.jss637.jss771 > a > button')
-        # # print('[test_automate_browser] buttons: ', US30Scanner)
+        # print('[test_automate_browser] buttons: ', US30Scanner)
         US30Scanner.click()
+        self.driver.implicitly_wait(3)
+        # self.driver.get("https://orakle.io/tools/us30")
         
 
         # Agreement = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/label/span[1]/span[1]/input") 
@@ -65,7 +67,7 @@ class AutomateBrowser(unittest.TestCase):
         self.driver.implicitly_wait(5)
 
         # return_keys(EntryPrice)
-
+ 
         # Arrow = self.driver.find_element_by_xpath( "//*[@id='root']/div[3]/main/div[4]/div[2]/svg").click()
         Arrow = self.driver.find_element_by_css_selector(".jss783.jss1017").click()
 
@@ -78,7 +80,7 @@ class AutomateBrowser(unittest.TestCase):
         print('[TAB-test_search_target] Symbol: ',Symbol.text)
 
         EntryPrice = self.driver.find_element_by_css_selector(".jss606.jss810.jss813.jss818.jss819 p.jss566.jss574") 
-        print('[TAB-test_search_target] Entry Price: ',EntryPrice.text); pdb.set_trace()
+        print('[TAB-test_search_target] Entry Price: ',EntryPrice.text)
 
         TargetPrice = self.driver.find_element_by_css_selector(".jss566.jss574.jss599")
         print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
