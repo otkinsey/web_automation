@@ -12,10 +12,11 @@ import time
 import subprocess
 import pdb
 import sys
+sys.path.append("C:\\Users\\otkin\\dwx_connector\\dwx-zeromq-connector\\v2.0.1\\python\\api")
 from DWX_ZeroMQ_Connector_v2_0_1_RC8 import DWX_ZeroMQ_Connector
 
 # add path to DWX_ZeroMQ_Connector_v2_0_1_RC8 python execution path
-sys.path.append("C:\\Users\\otkin\\dwx_connector\\dwx-zeromq-connector\\v2.0.1\\python\\api")
+
 BASE_URL = "https://orakle.io/login"
 
 class AutomateBrowser(unittest.TestCase):
@@ -23,12 +24,12 @@ class AutomateBrowser(unittest.TestCase):
         self.chrome_options = Options()
         # self.chrome_options.add_argument("--headless")
         self.chrome_options.add_experimental_option("detach",True) 
-        self.chrome_options.binary_location = "C:\Users\otkin\dwx_connector\dwx-zeromq-connector\v2.0.1\python\api"
+        # self.chrome_options.binary_location = "C:\\Users\\otkin\\dwx_connector\\dwx-zeromq-connector\\v2.0.1\\python\\api"
         self.driver = webdriver.Chrome(executable_path=os.path.abspath("chromedriver"), options=self.chrome_options)
 
     def test_search_target(self):
         
-        self.driver.get(BASE_URL)
+        self.driver.get(https://orakle.io/tools/us30)
         self.driver.implicitly_wait(1) 
         self.driver.maximize_window()
         handle1 = self.driver.title
@@ -50,8 +51,9 @@ class AutomateBrowser(unittest.TestCase):
         # alternate definition of US30Scanner using class name jss640 jss712 jss714 jss717 jss738 jss848
         self.driver.implicitly_wait(2)
         US30Scanner = self.driver.find_element_by_css_selector('#root > div.jss778 > main > div > div:nth-child(2) > div:nth-child(2) > div > div.jss637.jss771 > a > button')
-        # print('[test_automate_browser] buttons: ', US30Scanner)
+        # # print('[test_automate_browser] buttons: ', US30Scanner)
         US30Scanner.click()
+        
 
         # Agreement = self.driver.find_element_by_xpath( "/html/body/div[2]/div[2]/div/div[3]/label/span[1]/span[1]/input") 
         self.driver.implicitly_wait(3)
@@ -80,6 +82,12 @@ class AutomateBrowser(unittest.TestCase):
 
         TargetPrice = self.driver.find_element_by_css_selector(".jss566.jss574.jss599")
         print('[TAB-test_search_target] Target Price: ',TargetPrice.text)  
+
+        # Unchecked code
+
+        tp = (int( TargetPrice) - int( EntryPrice))
+
+        # sl = 
 
         # you need to find action (BUY or SELL)
 
@@ -138,6 +146,11 @@ class AutomateBrowser(unittest.TestCase):
         
 
         _zmq = DWX_ZeroMQ_Connector
+        
+        # Unchecked code
+        my_trade = {'_action': 'OPEN', '_type': 0, '_symbol': 'symbol', '_price': 0.0, '_SL': sl, '_TP': tp, '_comment': 'dwx-zeromq', '_lots': 0.05, '_magic': 123456, '_ticket': 0}
+
+
         # self.driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click() 
         # self.driver.find_element_by_xpath('//input[@type="email"]').send_keys(username)
         # self.driver.find_element_by_xpath('//*[@id="identifierNext"]').click()
