@@ -87,7 +87,9 @@ class AutomateBrowser(unittest.TestCase):
 
         # Unchecked code
 
-        tp = (int( TargetPrice) - int( EntryPrice))
+        tp = (float (TargetPrice.text[7:]) - float (EntryPrice.text))
+
+        sl = 100
 
         # sl = 
 
@@ -147,11 +149,11 @@ class AutomateBrowser(unittest.TestCase):
         # connect.click()
         
 
-        _zmq = DWX_ZeroMQ_Connector
+        _zmq = DWX_ZeroMQ_Connector()
         
         # Unchecked code
-        my_trade = {'_action': 'OPEN', '_type': 0, '_symbol': 'symbol', '_price': 0.0, '_SL': sl, '_TP': tp, '_comment': 'dwx-zeromq', '_lots': 0.05, '_magic': 123456, '_ticket': 0}
-
+        _my_trade = {'_action': 'OPEN', '_type': 0, '_symbol': 'WS30', '_price': 0.0, '_SL': sl, '_TP': tp, '_comment': 'dwx-zeromq', '_lots': 0.05, '_magic': 123456, '_ticket': 0}
+        _zmq._DWX_MTX_NEW_TRADE_(_order=_my_trade)
 
         # self.driver.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click() 
         # self.driver.find_element_by_xpath('//input[@type="email"]').send_keys(username)
